@@ -1,11 +1,5 @@
 
 
-// var button = document.getElementById('btn btn-info');
-//
-// button.addEventListener("click", function () {
-//     var address = document.getElementById('address').value;
-//     getLatitudeLongitude(showResult, address)
-//     console.log("btn listener working");
 
 var latitude = ""
 var longitude = ""
@@ -94,35 +88,3 @@ function getLatitudeLongitude(callback, address) {
 }
 
 })
-
-
-
-// https://congress.api.sunlightfoundation.com/legislators/locate?latitude=38.88&longitude=-108.09&apikey=88fe617b42db4716b522b0cfb007b044
-
-// POST the data from Spotify to MongoDB
-// $.ajax({
-//   type: 'POST',
-//   url: '/',
-//   success: function (data) {
-//
-//
-//   }
-// })
-
-
-
-/* This showResult function is used as the callback function
-https://jsfiddle.net/alvaroAV/qn8bb8q5/
-*/
-
-
-
-
-//
-// // var button = document.getElementById('btn');
-// //
-// // button.addEventListener("click", function () {
-// //     var address = document.getElementById('address').value;
-// //     getLatitudeLongitude(showResult, address)
-// //     console.log("btn listener working");
-// // });
