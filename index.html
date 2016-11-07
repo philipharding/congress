@@ -90,7 +90,7 @@
 <script id="cc-template" type="text/x-handlebars-template">
 {{#if this}}
   <br><br>
-  <h3>Here is your lineup:</h3>
+  <h3>Here is your lineup. Now let's have a <a href="#">party mashup</a>!</h3>
   {{#each this}}
 
 
@@ -98,10 +98,11 @@
 <div class="bs-component">
 <h2>{{first_name}} {{last_name}}</h2>
 <img src="https://theunitedstates.io/images/congress/225x275/{{bioguide_id}}.jpg">
-<p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
-<p><small>This line of text is meant to be treated as fine print.</small></p>
-<p><a href="http://facebook.com/{{facebook_id}}">Facebook</a></p>
-<p><a href="http://twitter.com/{{twitter_id}}">Twitter</a></p>
+<p> {{chamber}}</p>
+<p>Call: {{phone}}</p>
+<p>Mail: {{office}}</p>
+<p>Like: <a href="http://facebook.com/{{facebook_id}}">Facebook</a></p>
+<p>Tweet: <a href="http://twitter.com/{{twitter_id}}">Twitter</a></p>
 <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F{{facebook_id}}%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1120824548008526" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 <p><a class="twitter-timeline" href="https://twitter.com/{{twitter_id}}">Tweets by {{first_name}}</a> </p>
 </div>
