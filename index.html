@@ -19,11 +19,44 @@
 
   <body>
 
+<!-- Including FB SDK -->
+    <div id="fb-root"></div>
+    <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1120824548008526',
+        xfbml      : true,
+        version    : 'v2.8'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+
+
+
+
+<div class="fb-page"
+  data-href="https://www.facebook.com/facebook"
+  data-width="380"
+  data-hide-cover="false"
+  data-show-facepile="false"
+  data-show-posts="false"></div>
+
+
     <div class="site-wrapper">
 
       <div class="site-wrapper-inner">
 
         <div class="cover-container">
+
 
           <div class="masthead clearfix">
             <div class="inner">
@@ -47,9 +80,6 @@
 
 
 
-
-
-
               <form id="searchForm">
                 <div class="input-group">
                 <input type="text" class="form-control" size="40" name="address" placeholder="Enter your address..." />
@@ -59,6 +89,10 @@
               </div>
             </form>
             </p>
+
+
+
+
 
             <div id="members">
 
@@ -110,9 +144,13 @@
         <div class="member">{{chamber}}</div>
         <div class="member"><a href="http://facebook.com/{{facebook_id}}">Facebook</a> </div>
         <div class="member"><a href="http://twitter.com/{{twitter_id}}">Twitter</a> </div>
-
+        <div class="member"><img src="https://theunitedstates.io/images/congress/225x275/{{bioguide_id}}.jpg"></div>
+<div style="width: 100px;">
+<div class="fb-page" data-href="https://www.facebook.com/{{facebook_id}}" data-tabs="timeline" data-small-header="false" data-width="320" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/{{facebook_id}}" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/{{facebook_id}}">{{first_name}} {{last_name}}</a></blockquote></div>
+</div>
       {{/each}}
       {{/if}}
+
     </script>
 
 

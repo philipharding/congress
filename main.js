@@ -5,7 +5,7 @@ var latitude = ""
 var longitude = ""
 
 
-// Model
+// Create a members model array to load data from Sunlight API
 var members = []
 
 
@@ -73,7 +73,7 @@ console.log(members);
 
 function getLatitudeLongitude(callback, address) {
     // If adress is not supplied, use default value 'Ferrol, Galicia, Spain'
-    address = address || 'Ferrol, Galicia, Spain';
+    address = address || 'Sacramento, California';
     // Initialize the Geocoder
     geocoder = new google.maps.Geocoder();
     if (geocoder) {
@@ -88,3 +88,21 @@ function getLatitudeLongitude(callback, address) {
 }
 
 })
+
+//FB
+
+window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1120824548008526',
+    xfbml      : true,
+    version    : 'v2.8'
+  });
+};
+
+(function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "https://connect.facebook.net/en_US/sdk.js";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));
