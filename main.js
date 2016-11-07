@@ -1,13 +1,24 @@
 
 
 
+
+
+
+// Create a members model array to load data from Sunlight API
+// This will load the data object
+var members = []
+
+var members = ""
+var Dems = ""
+var Reps = ""
+
+// variables to collect the MOC coordinates
+
 var latitude = ""
 var longitude = ""
 
 
-// Create a members model array to load data from Sunlight API
-var members = []
-
+//initialize the handlebars view
 
 var template;
 
@@ -20,25 +31,26 @@ function renderMembers() {
   var memberHtml = template(members);
   $('#members').html(memberHtml);
 
-  console.log(memberHtml);
+  //console.log(memberHtml);
 }
 
 $(document).ready(function() {
   // First render the view
-  renderMembers();
+  //renderMembers();
 
   // Setup Listeners
 
 $('#searchForm').on('submit', function(event) {
   event.preventDefault();
 
-  // Get the artist enetered by the user
+  // Get the address enetered by the user
   var address = $('input[name="address"]').val();
 
+// calls the Geolocator funtion to convert from address to coordinates
   getLatitudeLongitude(showResult, address)
 
 
-
+//
 function showResult(result) {
     var latitude = result.geometry.location.lat();
     var longitude = result.geometry.location.lng();
@@ -51,15 +63,27 @@ function showResult(result) {
       type: 'GET',
       url: 'https://congress.api.sunlightfoundation.com/legislators/locate?latitude=' + latitude + '&longitude=' + longitude + '&apikey=88fe617b42db4716b522b0cfb007b044',
       success: function (data) {
+        // assign data object results to the members array
         members = data.results
-        // console.log("address = " + address)
-        // console.log(data.results)
-        // console.log(data.results[0].chamber);
-        // console.log("WE HAVE THE DATA OBJECT FROM Sun!");
-        // console.log("first name = " + data.results[0].first_name);
 
+        for (var i = 0; i < members.length; i++) {
+          if (members[i].party === "D") {
+            Dems++
+          } else if (members[i].party === "R"){
+            Reps++
+          }
+        }
+        console.log("Dems = " + Dems);
+        console.log("Reps = " + Reps);
+        // membersTeamOne.zero = members[0].party
+        // membersTeamOne.one = members[1].party
+        // membersTeamOne.two = members[2].party
+
+
+
+        console.log(membersTeamOne);
         // Rerender the View
-console.log(members);
+        // console.log(members);
     renderMembers();
 
       }
@@ -70,9 +94,10 @@ console.log(members);
 
 })
 
+// Google Geolocator
 
 function getLatitudeLongitude(callback, address) {
-    // If adress is not supplied, use default value 'Ferrol, Galicia, Spain'
+    // If adress is not supplied, use default value 'Sacramento, CA'
     address = address || 'Sacramento, California';
     // Initialize the Geocoder
     geocoder = new google.maps.Geocoder();
@@ -88,21 +113,3 @@ function getLatitudeLongitude(callback, address) {
 }
 
 })
-
-//FB
-
-window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '1120824548008526',
-    xfbml      : true,
-    version    : 'v2.8'
-  });
-};
-
-(function(d, s, id){
-   var js, fjs = d.getElementsByTagName(s)[0];
-   if (d.getElementById(id)) {return;}
-   js = d.createElement(s); js.id = id;
-   js.src = "https://connect.facebook.net/en_US/sdk.js";
-   fjs.parentNode.insertBefore(js, fjs);
- }(document, 'script', 'facebook-jssdk'));
