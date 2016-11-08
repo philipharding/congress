@@ -8,7 +8,6 @@
 // This will load the data object
 var members = []
 
-var members = ""
 var Dems = ""
 var Reps = ""
 
@@ -50,7 +49,7 @@ $('#searchForm').on('submit', function(event) {
   getLatitudeLongitude(showResult, address)
 
 
-//
+// Creating the coordinate variables
 function showResult(result) {
     var latitude = result.geometry.location.lat();
     var longitude = result.geometry.location.lng();
