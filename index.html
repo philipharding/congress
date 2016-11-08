@@ -33,7 +33,7 @@
                   <div class="input-group">
                   <input type="text" class="form-control" size="40" name="address" placeholder="Enter your address..." />
                   <span class="input-group-btn">
-                  <button class="btn btn-info" type="submit" />Go!</button>
+                  <button class="btn btn-default" type="submit" />Go!</button>
                 </span>
                 </div>
               </form>
@@ -75,7 +75,7 @@
 <script id="cc-template" type="text/x-handlebars-template">
 {{#if this}}
   <br><br>
-  <h3>Here is your lineup. Now let's have a political <a href="#">party mashup</a>!</h3>
+  <h3>Here is your member lineup. <!--Now let's have a political <a href="#">party mashup</a>!--></h3>
   {{#each this}}
 
 
@@ -83,7 +83,7 @@
 <div class="bs-component">
 <h2>{{first_name}} {{last_name}}</h2>
 <img src="https://theunitedstates.io/images/congress/225x275/{{bioguide_id}}.jpg">
-<p>{{chamber}} | {{party}}</p>
+<p><h5>{{chamber}} | {{party}}</h5></p>
 <p>Call: {{phone}}</p>
 <p>Mail: {{office}}</p>
 <p>Like: <a href="http://facebook.com/{{facebook_id}}">Facebook</a></p>
