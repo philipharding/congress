@@ -75,13 +75,11 @@ function showResult(result) {
         }
         console.log("Dems = " + Dems);
         console.log("Reps = " + Reps);
-        // membersTeamOne.zero = members[0].party
-        // membersTeamOne.one = members[1].party
-        // membersTeamOne.two = members[2].party
 
 
 
-        console.log(membersTeamOne);
+
+      //  console.log(membersTeamOne);
         // Rerender the View
         // console.log(members);
     renderMembers();
